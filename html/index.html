@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "Author" content = "Dion Salihu">
+        <meta name = "About" content = "Selling"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel = "stylesheet" href = "css/style.css"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <title>tech</title>
+    </head>
+    <body>
+    
+        <header>
+            <nav class="starter">
+                <a href="#" id="starter-logo"><i class="fa-brands fa-sketch"></i></a>
+    
+                <div class="search-con">
+                    <a href="#search-bar" id="loop-icon"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    <input type="text" id="search-bar" placeholder="Search">
+                </div>
+    
+                <ul class="starter-icons">
+                    <li><a href=""><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                    <div id = "profile-continer">
+                        <li><a href="/login"><i class="fa-solid fa-user"></i></a></li>
+                        <span id = "username-display"></span>
+                        <button id = "logout-btn" type = "button">Logout</button>
+                    </div>
+                </ul>
+            </nav>
+    
+    
+            <ul class="items-links">
+                <li><a href="#pc">PC</a></li>
+                <li><a href="#laptop">Laptop</a></li>
+                <li><a href="#monitorr">Monitor</a></li>
+                <li><a href="#phones">Phones</a></li>
+            </ul>
+        </header>
+
+        <section class = "entry">
+
+            <div class = "slider-con">
+                <div class = "slider">
+                    <img src = "images/dell.jpg" alt = "img1">       
+                    <img src = "images/laptop.jpg" alt = "img2">
+                    <img src = "images/logitech.jpg" alt = "img3">
+                    <img src = "images/pc.jpg" alt = "img4"> 
+                </div>
+            </div>
+
+            <div class = "descr"> 
+
+
+                <div class = "first info">
+
+                    <img src = "images/quality.svg">
+
+                    <div class = "ok">
+                        <h2>Premium Quality</h2>
+                        <p>Markat kryesore të teknologjisë i gjeni në Diamond Computers. Na vizitoni në dyqan ose online.</p>
+                    </div>
+                </div>
+
+                <div class = "second info">
+                    <img src = "images/delivery.svg">
+
+                    <div class = "ok">
+                        <h2>Transporti</h2>
+                        <p>Transporti ēshtë falas kudo në Kosovë për të gjitha porositë. Transport i shpejtë dhe i sigurtë.</p>
+                    </div>
+                </div>
+
+                <div class = "third info">
+
+                    <img src = "images/guarantee.svg">
+
+                    <div class = "ok ok1">
+                        <h2>Medalje</h2>
+                        <p>Lider ne cilesen dhe shum shpejt veq updates etc etc...</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class = "komp" id = "pc">
+            <div class = "komp-header">
+                <h2>PC</h2>
+            </div>
+
+            <div class = "komp-grid">
+
+                <div class = "kom nr1">
+                   <img src = "images/pc/komp1.webp" id = "komp1-w"> 
+
+                    <p class = "nr1-info" >RTX 4060 , AMD Ryzen 7 7800X3D, 32GB RAM, 512GB SSD - Gaming PC Diamond</p>
+
+                    <p class = "nr1-cmimi">750.00$</p>
+
+                    <ul class = "nr-buttons buttons">
+                        <li>
+                            <button onclick="addToCart('images/pc/komp1.webp', 'RTX 4060, AMD Ryzen 7 7800X3D, 32GB RAM, 512GB SSD', 750.00)" data-id="1">
+                              <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
+                          </li>
+                        <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                        <li id = "detajet"><a href="/details#one">Shiko detajet</a></li>
+                    </ul>                        
+
+                </div>
+
+                <div class = "kom nr2">
+                    <img src = "images/pc/komp2.webp" id = "komp2-w">
+
+                    <p class = "nr1-info">RTX 4060,AMD Ryzen 7 7800X3D,16GB RAM, 512GB SSD -Gaming Pc Diamond</p>
+
+                    <p class = "nr1-cmimi">650.00$</p>
+
+                    <ul class = "nr-buttons buttons">
+                        <li>
+                            <button onclick="addToCart('images/pc/komp2.webp', 'RTX 4060, AMD Ryzen 7 7800X3D, 16GB RAM, 512GB SSD - Gaming Pc Diamond', 650.00)" data-id="2">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
+                        </li>
+                        <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                        <li id = "detajet"><a href="/details#two">Shiko detajet</a></li>
+                    </ul>
+
+                </div>
+
+                <div class = "kom nr3">
+                    <img src = "images/pc/komp3.webp" id = "komp2-w">
+
+                    <p class = "nr1-info">RTX 3060, AMD Ryzen 5 5600X, 16GB RAM, 512GB SSD - Gaming PC Diamond</p>
+
+                    <p class = "nr1-cmimi">550.00$</p>
+
+                    <ul class = "nr-buttons buttons">
+                        <li>
+                            <button onclick="addToCart('images/pc/komp3.webp', 'RTX 3060, AMD Ryzen 5 5600X, 16GB RAM, 512GB SSD - Gaming PC Diamond', 550.00)" data-id="3">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
+                        </li>
+                        <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                        <li id = "detajet"><a href="/details#three">Shiko detajet</a></li>
+                    </ul>
+                </div>
+
+                <div class = "kom nr4">
+                    <img src = "images/pc/komp4.webp" id = "komp2-w">
+
+                    <p class = "nr1-info">RTX 3060, AMD Ryzen 5 5600X, 32GB RAM, 512GB SSD - Gaming PC Diamond </p>
+
+                    <p class = "nr1-cmimi"> 600.00$</p>
+
+                    <ul class = "nr-buttons buttons">
+                        <li>
+                            <button onclick="addToCart('images/pc/komp4.webp', 'RTX 3060, AMD Ryzen 5 5600X, 32GB RAM, 512GB SSD - Gaming PC Diamond', 600.00)" data-id="4">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
+                        </li>
+                        <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                        <li id = "detajet"><a href="/details#four">Shiko detajet</a></li>
+                    </ul>
+
+                </div>
+
+                <div class = "kom nr5">
+                    <img src = "images/pc/komp5.webp" id = "komp2-w">
+
+                    <p class = "nr1-info">RTX 5070, AMD Ryzen 7 7800X3D, 32GB RAM, 1TB SSD - Gaming PC Diamond </p>
+
+                    <p class = "nr1-cmimi"> 1500.00$</p>
+
+                    <ul class = "nr-buttons buttons">
+                        <li>
+                            <button onclick="addToCart('images/pc/komp5.webp', 'RTX 5070, AMD Ryzen 7 7800X3D, 32GB RAM, 1TB SSD - Gaming PC Diamond', 1500.00)" data-id="5">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
+                        </li>
+                        <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                        <li id = "detajet"><a href="/details#five">Shiko detajet</a></li>
+                    </ul>
+
+                </div>
+
+                <div class = "kom nr6">
+                    <img src = "images/pc/komp6.webp" id = "komp2-w">
+
+                    <p class = "nr1-info">RTX 3060, AMD Ryzen 5 5600X, 16GB RAM, 240GB SSD - Gaming PC Diamond </p>
+
+                    <p class = "nr1-cmimi"> 490.00$</p>
+
+                    <ul class = "nr-buttons buttons">
+                        <li>
+                            <button onclick="addToCart('images/pc/komp6.webp', 'RTX 3060, AMD Ryzen 5 5600X, 16GB RAM, 240GB SSD - Gaming PC Diamond', 490.00)" data-id="6">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
+                        </li>
+                        <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                        <li id = "detajet"><a href="/details#six">Shiko detajet</a></li>
+                    </ul>
+
+                </div>
+            
+            </div>
+        </section>
+
+        <section class = "laptopp" id = "laptop">
+            <div class = "laptopp-header">
+                <h2>Laptop</h2>
+            </div>
+
+            <div class = "laptopp-grid">
+
+                <div class = "laptop-number nrb-1">
+                    <img src = "images/laptop/laptop1.webp" id = "laptop-w1">
+
+                    <p class = "laptop-info">Laptop MSI Thin A15 B7VF-460XPL, 15.6",
+                         AMD Ryzen 7 7735HS, 16GB DDR5-SDRAM, 512GB SSD, NVIDIA GeForce RTX 4060
+                    </p>
+
+                    <p class = "laptop-cmimi">899.00$</p>
+
+                    <ul class = "laptop-nr-buttons">
+                        <li>
+                            <button onclick="addToCart('images/laptop/laptop1.webp', 'Laptop MSI Thin A15 B7VF-460XPL, 15.6\', AMD Ryzen 7 7735HS, 16GB DDR5-SDRAM, 512GB SSD, NVIDIA GeForce RTX 4060', 899.00)" data-id="7">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
+                        </li>
+                        <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                        <li id = "laptop-detajet"><a href="/details#seven">Shiko detajet</a></li>
+                    </ul>
+                </div>
+
+                <div class = "laptop-number nrb-2">
+                    <img src = "images/laptop/laptop2.webp" id = "laptop-w2">
+
+                    <p class = "laptop-info info-lp-nr2">
+                        Laptop Lenovo LOQ 15IAX9, 15.6", i5-12450HX, 16GB RAM, 512GB SSD, Nvidia RTX 3050 
+                    </p>
+
+                    <p class = "laptop-cmimi">650.00$</p>
+
+                    <ul class = "laptop-nr-buttons">
+                        <li>
+                            <button onclick="addToCart('images/laptop/laptop2.webp', 'Laptop Lenovo LOQ 15IAX9, 15.6\', i5-12450HX, 16GB RAM, 512GB SSD, Nvidia RTX 3050', 650.00)" data-id="8">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
+                        </li>
+                        <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                        <li id = "laptop-detajet"><a href="/details#eight">Shiko detajet</a></li>
+                    </ul>
+                </div>
+
+                <div class = "laptop-number nrb-3">
+                    <img src = "images/laptop/laptop3.webp" id = "laptop-w3">
+
+                    <p class = "laptop-info info-lp-nr3">
+                        Laptop MSI Katana 17 B13VEK-1464XCZ, 17.3", Intel Core i5-13420H, 16GB RAM, 1TB SSD, NVIDIA GeForce RTX 4050 
+                    </p>
+
+                    <p class = "laptop-cmimi">1050.00$</p>
+
+                    <ul class = "laptop-nr-buttons">
+                        <li>
+                            <button onclick="addToCart('images/laptop/laptop3.webp', 'Laptop MSI Katana 17 B13VEK-1464XCZ, 17.3\', Intel Core i5-13420H, 16GB RAM, 1TB SSD, NVIDIA GeForce RTX 4050', 1050.00)" data-id="9">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
+                        </li>
+                        <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                        <li id = "laptop-detajet"><a href="/details#nine">Shiko detajet</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <section class = "monitor" id = "monitorr">
+            <div class = "monitor-header">
+                <h2>Monitors</h2>
+            </div>
+
+            <div class = "monitor-grid">
+                <div class = "monitor-number nrbm-1">
+                    <img src = "images/monitors/monitor1.webp" id = "monitor-w1" >
+
+                    <p class = "monitor-info">
+                        Monitor AOC 24G2SPAE - LED, 23.8", Full HD, i zi 
+                    </p>
+
+                    <p class = "monitor-cmimi">
+                        120.00$
+                    </p>
+
+                    <ul class = "monitor-nr-buttons">
+                        <li id="monitor-buttons-first">
+                            <button onclick="addToCart('images/monitors/monitor1.webp', 'Monitor AOC 24G2SPAE - LED, 23.8\', Full HD, i zi', 120.00)" data-id="10">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
+                        </li>
+                        <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                    </ul>
+                </div>
+
+                <div class = "monitor-number nrbm-2">
+                    <img src = "images/monitors/laptop2.webp" id = "monitor-w2" >
+
+                    <p class = "monitor-info">
+                        Monitor LG UltraWide 34WP65CP-B, 34", UWQHD, i zi 
+                    </p>
+
+                    <p class = "monitor-cmimi">
+                        375.00$
+                    </p>
+
+                    <ul class = "monitor-nr-buttons">
+                        <li id="monitor-buttons-first">
+                            <button onclick="addToCart('images/monitors/monitor2.webp', 'Monitor LG UltraWide 34WP65CP-B, 34\', UWQHD, i zi', 375.00)" data-id="11">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
+                        </li>
+                        <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                    </ul>
+                </div>
+
+                <div class = "monitor-number nrmb-3">
+                    <img src = "images/monitors/monitor3.webp" id = "monitor-w3" >
+
+                    <p class = "monitor-info">
+                        Monitor MSI Pro MP245V, 23.8", Full HD, 100 Hz, i zi 
+                    </p>
+
+                    <p class = "monitor-cmimi">
+                        99.00$ 
+                    </p>
+
+                    <ul class = "monitor-nr-buttons">
+                        <li id="monitor-buttons-first">
+                            <button onclick="addToCart('images/monitors/monitor3.webp', 'Monitor MSI Pro MP245V, 23.8\', Full HD, 100 Hz, i zi', 99.00)" data-id="12">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
+                        </li>
+                        <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <section class = "phone" id = "phones">
+            <div class = "phone-header">
+                <h2>Phones</h2>
+            </div>
+
+            <div class = "phones-grid">
+                
+                <div class = "phone-number number--1">
+                    <img src = "images/phones/phone1.webp" id = "phone-w">
+
+                    <p class = "phone-info">Celular myPhone Maestro 2, i zi </p>
+
+                    <p class = "phone-cmimi">30.00$ </p>
+                    
+                    <ul class = "phone-nr-buttons">
+                        <li id="phone-buttons-first">
+                            <button onclick="addToCart('images/phones/phone1.webp', 'Celular myPhone Maestro 2, i zi', 30.00)" data-id="13">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
+                        </li>
+                        <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                    </ul>
+
+                </div>
+
+                <div class = "phone-number number--2">
+                    <img src = "images/phones/phone2.webp" id = "phone-w2">
+
+                    <p class = "phone-info">Apple iPhone 15, 128GB, Blue</p>
+
+                    <p class = "phone-cmimi">900.00$ </p>
+                    
+                    <ul class = "phone-nr-buttons">
+                        <li id="phone-buttons-first">
+                            <button onclick="addToCart('images/phones/phone2.webp', 'Apple iPhone 15, 128GB, Blue', 900.00)" data-id="14">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
+                        </li>
+                        <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                    </ul>
+
+                </div>
+
+                <div class = "phone-number number--3">
+                    <img src = "images/phones/phone3.webp" id = "phone-w3">
+
+                    <p class = "phone-info">Apple iPhone 16, 128GB, Black</p>
+
+                    <p class = "phone-cmimi">1000.00$ </p>
+                    
+                    <ul class = "phone-nr-buttons">
+                        <li id="phone-buttons-first">
+                            <button onclick="addToCart('images/phones/phone3.webp', 'Apple iPhone 16, 128GB, Black', 1000.00)" data-id="15">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
+                        </li>
+                        <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </section>
+
+
+        <script src = "apps.js"></script>
+    </body>
+
+</html>
