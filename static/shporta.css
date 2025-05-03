@@ -26,6 +26,7 @@ header {
     display: flex;
     flex-direction: column;
 }
+
 .starter {
     width: 100vw;
     height: 70%;
@@ -33,31 +34,66 @@ header {
     justify-content: space-between;
     align-items: center;
     background-color: var(--background-color);
+    padding: 0 2vw;
 }
 
-.starter-icons {
-    width: 25vw;
+
+.right-links {
     height: 100%;
+    width: 25%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    margin-right:5vh;
 }
 
-.starter-icons li {
-    list-style-type: none;
-    width: 30%;
+.starter-icons-left,
+.starter-icons-right {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100%;
-    border-left: 2px solid white;
+    gap: 20px;
 }
 
-.starter-icons li a {
+.starter-icons-left {
+    display: flex;
+    justify-content: space-between;
+}
+
+.starter-icons-left a {
+    border-left: 2px solid white;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    padding-top: 20%;
+}
+
+
+#shporta-heart-icon {
+    border-right: 2px solid white;
+}
+
+.starter-icons-left a,
+.starter-icons-right a {
     font-size: 1.5rem;
-    position: relative;
-    left: 45%;
-    top: 40%;  
     color: white;
     transition: 0.3s ease;
+}
+
+.starter-icons-left a:hover,
+.starter-icons-right a:hover {
+    font-size: 1.7rem;
+}
+
+#profile-container {
+    gap: 10px;
+}
+
+#username-display {
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
 }
 
 .starter-icons li a:hover {
@@ -65,60 +101,46 @@ header {
 }
 
 
-#loop-icon {
-    font-size: 1.5rem;
-    color: white;
-}
-
-.linking { 
-    width: 15%;
+#starter-logo { 
+    width: 10%;
     height: 100%;
     position: relative;
     left: 12vw;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     font-size: 3rem;
+    color: white;
     transition: 0.2s ease;
     border-right: 2px solid white;
 }
 
+#starter-logo:hover {
+    font-size: 3.5rem;
+} 
 
-#profile-continer {
-    height: 100%;
+#profile-container form {
     width: 50%;
-    display: flex;
-    align-items: center;
+    height: 30%;
 }
 
-
 #logout-btn {
-    width: 30%;
-    height: 20%;
-    margin-left: 8%;
-    border-radius: 10vh;
+    width: 90%;
+    height: 90%;
+    border-top-right-radius: 1vh;
+    border-bottom-right-radius: 1vh;
+    border-top-left-radius: 1vh;
+    border-bottom-left-radius: 1vh;
     background-color: white;
     color: var(--background-color);
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 400;
     transition: 0.3s ease;
 }
 
 #logout-btn:hover {
-    width: 32%;
+    width: 100%;
 }
-
-#username-display {
-    color: white;
-    font-weight: 600;
-    font-size: 1.4rem;
-}
-
-#starter-logo {
-    color: white;
-}
-#starter-logo:hover {
-    font-size: 3.5rem;
-} 
 
 #go-back:hover {
     font-size: 3.5rem;
@@ -131,25 +153,30 @@ header {
 main {
     grid-row: 2/3;
     display: flex;
-    justify-content: center;
     align-items: start;
+    justify-content: center;
 }
 
 .inside {
     width: 80%;
     height: 80%;
-    border: 1px solid black;
+    border: 2px solid black;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    border-top-right-radius: 2vh;
+    border-top-left-radius: 2vh;
 }
 
 h2 {
     font-size: 1.8rem;
     font-weight: 400;
+    padding-left: 5%;
 }
 
 .upper-links {
-    border: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
     width: 100%;
     height: 5vh;
     margin-top: 4vh;
@@ -160,6 +187,11 @@ h2 {
 
 .upper-links li { 
     list-style-type: none;
+}
+
+#trash a{
+    font-size: 1.2rem;
+    color: black;
 }
 
 .box {
@@ -264,4 +296,19 @@ h2 {
 
 .trash-div a:hover {
     color: var(--background-color);
+}
+
+.place-order-btn {
+    width: 150px;
+    height: 30px;
+    margin-top: 15%;
+    background-color: var(--background-color);
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.place-order-btn:hover {
+    width: 160px;
 }

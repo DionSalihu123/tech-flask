@@ -47,14 +47,15 @@ header {
 
 .starter-icons-left,
 .starter-icons-right {
+    width: 50%;
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 100%;
     gap: 20px;
 }
 
 .starter-icons-left {
-    width: 40%;
     display: flex;
     justify-content: space-between;
 }
@@ -64,12 +65,9 @@ header {
     width: 50%;
     height: 100%;
     text-align: center;
-    padding-top: 24%;
+    padding-top: 20%;
 }
 
-.starter-icons-right {
-    width: 50%;
-}
 
 #shporta-heart-icon {
     border-right: 2px solid white;
@@ -88,7 +86,7 @@ header {
 }
 
 #profile-container {
-    gap: 15px;
+    gap: 10px;
 }
 
 #username-display {
@@ -149,6 +147,29 @@ header {
 #starter-logo:hover {
     font-size: 3.5rem;
 } 
+
+#profile-container form {
+    width: 50%;
+    height: 30%;
+}
+
+#logout-btn {
+    width: 90%;
+    height: 90%;
+    border-top-right-radius: 1vh;
+    border-bottom-right-radius: 1vh;
+    border-top-left-radius: 1vh;
+    border-bottom-left-radius: 1vh;
+    background-color: white;
+    color: var(--background-color);
+    font-size: 1rem;
+    font-weight: 400;
+    transition: 0.3s ease;
+}
+
+#logout-btn:hover {
+    width: 100%;
+}
 
 .items-links {
     width: 60%;

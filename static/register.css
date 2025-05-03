@@ -144,6 +144,10 @@ header {
     height: 30%;
 }
 
+.nm {
+    display: flex;
+}
+
 .psw {
     display: flex;
     margin-right: 8%;
