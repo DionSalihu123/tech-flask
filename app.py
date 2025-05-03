@@ -128,6 +128,45 @@ def shporta():
     return render_template("shporta.html")
 
 
+@app.route('/place_order', methods=['POST'])
+def place_order():
+    # ensure user is logged in
+    if 'user_id' not in session:
+        flash("Please log in to place an order.", "warning")
+        return redirect(url_for('login'))
+
+    cart = session.get('cart', [])
+    if not cart:
+        flash("Your cart is empty.", "warning")
+        return redirect(url_for('shporta'))
+
+    db = database.get_database()
+    cursor = db.cursor()
+
+    # 1) insert the order record
+    total = sum(item['price'] * item['quantity'] for item in cart)
+    cursor.execute(
+        "INSERT INTO orders (user_id, total_price) VALUES (?, ?)",
+        (session['user_id'], total)
+    )
+    order_id = cursor.lastrowid
+
+    # 2) insert each item into order_items
+    for item in cart:
+        cursor.execute(
+            "INSERT INTO order_items (order_id, product_id, quantity, price) VALUES (?, ?, ?, ?)",
+            (order_id, item['id'], item['quantity'], item['price'])
+        )
+
+    db.commit()
+    cursor.close()
+
+    # 3) clear the cart and redirect
+    session.pop('cart', None)
+    flash("Your order has been placed successfully!", "success")
+    return redirect(url_for('home'))
+
+
 @app.route('/logout')
 def logout():
     session.clear()

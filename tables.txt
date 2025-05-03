@@ -32,8 +32,38 @@ CREATE TABLE orders (
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
+-- run this once (e.g. in sqlite3 or via a migration)
+CREATE TABLE IF NOT EXISTS order_items (
+    id INTEGER PRIMARY KEY,
+    order_id INTEGER NOT NULL,
+    product_id INTEGER NOT NULL,
+    quantity INTEGER NOT NULL,
+    price REAL NOT NULL,
+    FOREIGN KEY(order_id) REFERENCES orders(id) ON DELETE CASCADE,
+    FOREIGN KEY(product_id) REFERENCES products(id) ON DELETE CASCADE
+);
+
+
 
 .tables view tables
 .databases - database path
 .schema - how tables are created.
+
+-- Insert products into the products table
+INSERT INTO products (id, name, description, price, stock, category) VALUES
+(1, 'RTX 4060, AMD Ryzen 7 7800X3D, 32GB RAM, 512GB SSD - Gaming PC Diamond', 'RTX 4060, AMD Ryzen 7 7800X3D, 32GB RAM, 512GB SSD - Gaming PC Diamond', 750.00, 10, 'PC'),
+(2, 'RTX 4060, AMD Ryzen 7 7800X3D, 16GB RAM, 512GB SSD - Gaming Pc Diamond', 'RTX 4060, AMD Ryzen 7 7800X3D, 16GB RAM, 512GB SSD - Gaming Pc Diamond', 650.00, 10, 'PC'),
+(3, 'RTX 3060, AMD Ryzen 5 5600X, 16GB RAM, 512GB SSD - Gaming PC Diamond', 'RTX 3060, AMD Ryzen 5 5600X, 16GB RAM, 512GB SSD - Gaming PC Diamond', 550.00, 10, 'PC'),
+(4, 'RTX 3060, AMD Ryzen 5 5600X, 32GB RAM, 512GB SSD - Gaming PC Diamond', 'RTX 3060, AMD Ryzen 5 5600X, 32GB RAM, 512GB SSD - Gaming PC Diamond', 600.00, 10, 'PC'),
+(5, 'RTX 5070, AMD Ryzen 7 7800X3D, 32GB RAM, 1TB SSD - Gaming PC Diamond', 'RTX 5070, AMD Ryzen 7 7800X3D, 32GB RAM, 1TB SSD - Gaming PC Diamond', 1500.00, 10, 'PC'),
+(6, 'RTX 3060, AMD Ryzen 5 5600X, 16GB RAM, 240GB SSD - Gaming PC Diamond', 'RTX 3060, AMD Ryzen 5 5600X, 16GB RAM, 240GB SSD - Gaming PC Diamond', 490.00, 10, 'PC'),
+(7, 'Laptop MSI Thin A15 B7VF-460XPL, 15.6", AMD Ryzen 7 7735HS, 16GB DDR5-SDRAM, 512GB SSD, NVIDIA GeForce RTX 4060', 'Laptop MSI Thin A15 B7VF-460XPL, 15.6", AMD Ryzen 7 7735HS, 16GB DDR5-SDRAM, 512GB SSD, NVIDIA GeForce RTX 4060', 899.00, 10, 'Laptop'),
+(8, 'Laptop Lenovo LOQ 15IAX9, 15.6", i5-12450HX, 16GB RAM, 512GB SSD, Nvidia RTX 3050', 'Laptop Lenovo LOQ 15IAX9, 15.6", i5-12450HX, 16GB RAM, 512GB SSD, Nvidia RTX 3050', 650.00, 10, 'Laptop'),
+(9, 'Laptop MSI Katana 17 B13VEK-1464XCZ, 17.3", Intel Core i5-13420H, 16GB RAM, 1TB SSD, NVIDIA GeForce RTX 4050', 'Laptop MSI Katana 17 B13VEK-1464XCZ, 17.3", Intel Core i5-13420H, 16GB RAM, 1TB SSD, NVIDIA GeForce RTX 4050', 1050.00, 10, 'Laptop'),
+(10, 'Monitor AOC 24G2SPAE - LED, 23.8", Full HD, i zi', 'Monitor AOC 24G2SPAE - LED, 23.8", Full HD, i zi', 120.00, 10, 'Monitor'),
+(11, 'Monitor LG UltraWide 34WP65CP-B, 34", UWQHD, i zi', 'Monitor LG UltraWide 34WP65CP-B, 34", UWQHD, i zi', 375.00, 10, 'Monitor'),
+(12, 'Monitor MSI Pro MP245V, 23.8", Full HD, 100 Hz, i zi', 'Monitor MSI Pro MP245V, 23.8", Full HD, 100 Hz, i zi', 99.00, 10, 'Monitor'),
+(13, 'Celular myPhone Maestro 2, i zi', 'Celular myPhone Maestro 2, i zi', 30.00, 10, 'Phone'),
+(14, 'Apple iPhone 15, 128GB, Blue', 'Apple iPhone 15, 128GB, Blue', 900.00, 10, 'Phone'),
+(15, 'Apple iPhone 16, 128GB, Black', 'Apple iPhone 16, 128GB, Black', 1000.00, 10, 'Phone');
 

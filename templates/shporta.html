@@ -68,8 +68,15 @@
         </div>
     {% endfor %}
     </div>
-</main>
 
+    {% if session.get('cart') %}
+    <form action="{{ url_for('place_order') }}" method="POST">
+        <button type="submit" class="place-order-btn">
+            <i class="fa-solid fa-box"></i> Place Order
+        </button>
+    </form>
+    {% endif %}
+</main>
 
 
 </body>
