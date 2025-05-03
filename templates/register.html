@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "Author" description = "Dion Salihu">
+    <meta name = "About" description = "Selling"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>tech</title>
+</head>
+<body>
+    <header>
+        <nav class="starter">
+            <div class="linking">
+                <a href="/" id="go-back"><i class="fa-solid fa-backward-step"></i></a>
+                <a href="#" id="starter-logo"><i class="fa-brands fa-sketch"></i></a>
+            </div>
+
+           
+            <ul class="starter-icons">
+                <li><a href="shporta.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a href="favorites.html"><i class="fa-solid fa-heart"></i></a></li>
+                <li><a href="/login"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class = "register-log">
+
+        <div class = "register">
+
+            <div class="register-form">
+                <h2>Register</h2>
+            
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <ul class="flash-messages">
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                {% endwith %}
+            
+            
+                <form action="/register" method="post">
+
+                    <div class = "nm a">
+                        <label for = "username">username*:</label>
+                        <input type = "text" id = "name" name = "username" placeholder="emri" required>
+                    </div>
+
+                    <div class = "sr a">
+                        <label for = "surname">Mbiemri*:</label>
+                        <input type = "text" id = "surname" name = "surname" placeholder = "Mbiemri" required> 
+                    </div>
+
+                    <div class="eml a">
+                        <label for="email">Email*:</label>
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                    </div>
+
+                    <div class="psw a">
+                        <label for="password">Password*:</label>
+                        <input type="password" id="password" name="password" placeholder = "password" required>
+                    </div>
+
+                    <button type="submit">Register</button>
+
+                </form>
+                <p class = "login">If you have an account <a href = "{{ url_for('login') }}">Login</a></p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</body>
+</html>

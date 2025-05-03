@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "Author" content = "Dion Salihu">
+        <meta name = "About" content = "Selling"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <title>tech</title>
+    </head>
+    <body>
+    
+        <header>
+            <nav class="starter">
+                <a href="#" id="starter-logo"><i class="fa-brands fa-sketch"></i></a>
+    
+                <div class="search-con">
+                    <a href="#search-bar" id="loop-icon"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    <input type="text" id="search-bar" placeholder="Search">
+                </div>
+   
+                <div class="right-links">
+                    <div class="starter-icons-left">
+                        <a href="{{ url_for('shporta') }}"><i class="fa-solid fa-cart-shopping"></i></a>
+                        <a href="#" id = "shporta-heart-icon" ><i class="fa-solid fa-heart"></i></a>
+                    </div>
+                
+                    <div class="starter-icons-right" id="profile-container">
+                        {% if user and user.logged_in %}
+                        <a href="#"><i class="fa-solid fa-user"></i></a>
+                        <span id="username-display">{{ user.username }}</span>
+                        <form method="get" action="{{ url_for('logout') }}">
+                            <button id="logout-btn" type="submit">Logout</button>
+                        </form>
+                        {% else %}
+                        <a href="{{ url_for('login') }}"><i class="fa-solid fa-user"></i> Login</a>
+                        {% endif %}
+                    </div>
+                </div>
+               
+            </nav>
+    
+    
+            <ul class="items-links">
+                <li><a href="#pc">PC</a></li>
+                <li><a href="#laptop">Laptop</a></li>
+                <li><a href="#monitorr">Monitor</a></li>
+                <li><a href="#phones">Phones</a></li>
+            </ul>
+        </header>
+
+        <section class = "entry">
+
+            <div class = "slider-con">
+                <div class = "slider">
+                    <img src = "static/images/dell.jpg" alt = "img1">       
+                    <img src = "static/images/laptop.jpg" alt = "img2">
+                    <img src = "static/images/logitech.jpg" alt = "img3">
+                    <img src = "static/images/pc.jpg" alt = "img4"> 
+                </div>
+            </div>
+
+            <div class = "descr"> 
+
+
+                <div class = "first info">
+
+                    <img src = "static/images/quality.svg">
+
+                    <div class = "ok">
+                        <h2>Premium Quality</h2>
+                        <p>Markat kryesore të teknologjisë i gjeni në Diamond Computers. Na vizitoni në dyqan ose online.</p>
+                    </div>
+                </div>
+
+                <div class = "second info">
+                    <img src = "static/images/delivery.svg">
+
+                    <div class = "ok">
+                        <h2>Transporti</h2>
+                        <p>Transporti ēshtë falas kudo në Kosovë për të gjitha porositë. Transport i shpejtë dhe i sigurtë.</p>
+                    </div>
+                </div>
+
+                <div class = "third info">
+
+                    <img src = "static/images/guarantee.svg">
+
+                    <div class = "ok ok1">
+                        <h2>Medalje</h2>
+                        <p>Lider ne cilesen dhe shum shpejt veq updates etc etc...</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class = "komp" id = "pc">
+            <div class = "komp-header">
+                <h2>PC</h2>
+            </div>
+
+            <div class = "komp-grid">
+
+                <div class = "kom nr1">
+                   <img src = "static/images/pc/komp1.webp" id = "komp1-w"> 
+
+                    <p class = "nr1-info" >RTX 4060 , AMD Ryzen 7 7800X3D, 32GB RAM, 512GB SSD - Gaming PC Diamond</p>
+
+                    <p class = "nr1-cmimi">750.00$</p>
+
+                    <ul class="nr-buttons buttons">
+                        <li>
+                            <form method="POST" action="{{ url_for('add_to_cart') }}">
+                                <input type="hidden" name="product_id" value="1">
+                                <input type="hidden" name="product_name" value="RTX 4060, AMD Ryzen 7 7800X3D, 32GB RAM, 512GB SSD">
+                                <input type="hidden" name="product_price" value="750.00">
+                                <input type="hidden" name="product_image" value="{{ url_for('static', filename='images/pc/komp1.webp') }}">
+                                <button type="submit">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                            </form>
+                        </li>
+                        <li><a href="#"><i class="fa-solid fa-heart"></i></a></li>
+                        <li id="detajet"><a href="/details#one">Shiko detajet</a></li>
+                    </ul>                      
+
+                </div>
+
+                <div class = "kom nr2">
+                    <img src = "static/images/pc/komp2.webp" id = "komp2-w">
+
+                    <p class = "nr1-info">RTX 4060,AMD Ryzen 7 7800X3D,16GB RAM, 512GB SSD -Gaming Pc Diamond</p>
+
+                    <p class = "nr_preface1-cmimi">650.00$</p>
+
+                    <ul class = "nr-buttons buttons">
+                        <li>
+                            <form method="POST" action="{{ url_for('add_to_cart') }}">
+                                <input type="hidden" name="product_id" value="2">
+                                <input type="hidden" name="product_name" value="RTX 4060, AMD Ryzen 7 7800X3D, 16GB RAM, 512GB SSD - Gaming Pc Diamond">
+                                <input type="hidden" name="product_price" value="650.00">
+                                <input type="hidden" name="product_image" value="{{ url_for('static', filename='images/pc/komp2.webp') }}">
+                                <button type="submit">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                            </form>
+                        </li>
+                        <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                        <li id = "detajet"><a href="/details#two">Shiko detajet</a></li>
+                    </ul>
+
+                </div>
+
+                <div class = "kom nr3">
+                    <img src = "static/images/pc/komp3.webp" id = "komp2-w">
+
+                    <p class = "nr1-info">RTX 3060, AMD Ryzen  5 5600X, 16GB RAM, 512GB SSD - Gaming PC Diamond</p>
+
+                    <p class = "nr1-cmimi">550.00$</p>
+
+                    <ul class = "nr-buttons buttons">
+                        <li>
+                            <form method="POST" action="{{ url_for('add_to_cart') }}">
+                                <input type="hidden" name="product_id" value="3">
+                                <input type="hidden" name="product_name" value="RTX 3060, AMD Ryzen 5 5600X, 16GB RAM, 512GB SSD - Gaming PC Diamond">
+                                <input type="hidden" name="product_price" value="550.00">
+                                <input type="hidden" name="product_image" value="{{ url_for('static', filename='images/pc/komp3.webp') }}">
+                                <button type="submit">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                            </form>
+                        </li>
+                        <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                        <li id = "detajet"><a href="/details#three">Shiko detajet</a></li>
+                    </ul>
+                </div>
+
+                <div class = "kom nr4">
+                    <img src = "static/images/pc/komp4.webp" id = "komp2-w">
+
+                    <p class = "nr1-info">RTX 3060, AMD Ryzen 5 5600X, 32GB RAM, 512GB SSD - Gaming PC Diamond </p>
+
+                    <p class = "nr1-cmimi"> 600.00$</p>
+
+                    <ul class = "nr-buttons buttons">
+                        <li>
+                            <form method="POST" action="{{ url_for('add_to_cart') }}">
+                                <input type="hidden" name="product_id" value="4">
+                                <input type="hidden" name="product_name" value="RTX 3060, AMD Ryzen 5 5600X, 32GB RAM, 512GB SSD - Gaming PC Diamond">
+                                <input type="hidden" name="product_price" value="600.00">
+                                <input type="hidden" name="product_image" value="{{ url_for('static', filename='images/pc/komp4.webp') }}">
+                                <button type="submit">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                            </form>
+                        </li>
+                        <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                        <li id = "detajet"><a href="/details#four">Shiko detajet</a></li>
+                    </ul>
+
+                </div>
+
+                <div class = "kom nr5">
+                    <img src = "static/images/pc/komp5.webp" id = "komp2-w">
+
+                    <p class = "nr1-info">RTX 5070, AMD Ryzen 7 7800X3D, 32GB RAM, 1TB SSD - Gaming PC Diamond </p>
+
+                    <p class = "nr1-cmimi"> 1500.00$</p>
+
+                    <ul class = "nr-buttons buttons">
+                        <li>
+                            <form method="POST" action="{{ url_for('add_to_cart') }}">
+                                <input type="hidden" name="product_id" value="5">
+                                <input type="hidden" name="product_name" value="RTX 5070, AMD Ryzen 7 7800X3D, 32GB RAM, 1TB SSD - Gaming PC Diamond">
+                                <input type="hidden" name="product_price" value="1500.00">
+                                <input type="hidden" name="product_image" value="{{ url_for('static', filename='images/pc/komp5.webp') }}">
+                                <button type="submit">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                            </form>
+                        </li>
+                        <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                        <li id = "detajet"><a href="/details#five">Shiko detajet</a></li>
+                    </ planetsul>
+
+                </div>
+
+                <div class = "kom nr6">
+                    <img src = "static/images/pc/komp6.webp" id = "komp2-w">
+
+                    <p class = "nr1-info">RTX 3060, AMD Ryzen 5 5600X, 16GB RAM, 240GB SSD - Gaming PC Diamond </p>
+
+                    <p class = "nr1-cmimi"> 490.00$</p>
+
+                    <ul class = "nr-buttons buttons">
+                        <li>
+                            <form method="POST" action="{{ url_for('add_to_cart') }}">
+                                <input type="hidden" name="product_id" value="6">
+                                <input type="hidden" name="product_name" value="RTX 3060, AMD Ryzen 5 5600X, 16GB RAM, 240GB SSD - Gaming PC Diamond">
+                                <input type="hidden" name="product_price" value="490.00">
+                                <input type="hidden" name="product_image" value="{{ url_for('static', filename='images/pc/komp6.webp') }}">
+                                <button type="submit">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                            </form>
+                        </li>
+                        <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                        <li id = "detajet"><a href="/details#six">Shiko detajet</a></li>
+                    </ul>
+
+                </div>
+            
+            </div>
+        </section>
+
+        <section class = "laptopp" id = "laptop">
+            <div class = "laptopp-header">
+                <h2>Laptop</h2>
+            </div>
+
+            <div class = "laptopp-grid">
+
+                <div class = "laptop-number nrb-1">
+                    <img src = "static/images/laptop/laptop1.webp" id = "laptop-w1">
+
+                    <p class = "laptop-info">Laptop MSI Thin A15 B7VF-460XPL, 15.6",
+                         AMD Ryzen 7 7735HS, 16GB DDR5-SDRAM, 512GB SSD, NVIDIA GeForce RTX 4060
+                    </p>
+
+                    <p class = "laptop-cmimi">899.00$</p>
+
+                    <ul class = "laptop-nr-buttons">
+                        <li>
+                            <form method="POST" action="{{ url_for('add_to_cart') }}">
+                                <input type="hidden" name="product_id" value="7">
+                                <input type="hidden" name="product_name" value="Laptop MSI Thin A15 B7VF-460XPL, 15.6', AMD Ryzen 7 7735HS, 16GB DDR5-SDRAM, 512GB SSD, NVIDIA GeForce RTX 4060">
+                                <input type="hidden" name="product_price" value="899.00">
+                                <input type="hidden" name="product_image" value="{{ url_for('static', filename='images/laptop/laptop1.webp') }}">
+                                <button type="submit">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                            </form>
+                        </li>
+                        <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                        <li id = "laptop-detajet"><a href="/details#seven">Shiko detajet</a></li>
+                    </ul>
+                </div>
+
+                <div class = "laptop-number nrb-2">
+                    <img src = "static/images/laptop/laptop2.webp" id = "laptop-w2">
+
+                    <p class = "laptop-info info-lp-nr2">
+                        Laptop Lenovo LOQ 15IAX9, 15.6", i5-12450HX, 16GB RAM, 512GB SSD, Nvidia RTX 3050 
+                    </p>
+
+                    <p class = "laptop-cmimi">650.00$</p>
+
+                    <ul class = "laptop-nr-buttons">
+                        <li>
+                            <form method="POST" action="{{ url_for('add_to_cart') }}">
+                                <input type="hidden" name="product_id" value="8">
+                                <input type="hidden" name="product_name" value="Laptop Lenovo LOQ 15IAX9, 15.6', i5-12450HX, 16GB RAM, 512GB SSD, Nvidia RTX 3050">
+                                <input type="hidden" name="product_price" value="650.00">
+                                <input type="hidden" name="product_image" value="{{ url_for('static', filename='images/laptop/laptop2.webp') }}">
+                                <button type="submit">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                            </form>
+                        </li>
+                        <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                        <li id = "laptop-detajet"><a href="/details#eight">Shiko detajet</a></li>
+                    </ul>
+                </div>
+
+                <div class = "laptop-number nrb-3">
+                    <img src = "static/images/laptop/laptop3.webp" id = "laptop-w3">
+
+                    <p class = "laptop-info info-lp-nr3">
+                        Laptop MSI Katana 17 B13VEK-1464XCZ, 17.3", Intel Core i5-13420H, 16GB RAM, 1TB SSD, NVIDIA GeForce RTX 4050 
+                    </p>
+
+                    <p class = "laptop-cmimi">1050.00$</p>
+
+                    <ul class = "laptop-nr-buttons">
+                        <li>
+                            <form method="POST" action="{{ url_for('add_to_cart') }}">
+                                <input type="hidden" name="product_id" value="9">
+                                <input type="hidden" name="product_name" value="Laptop MSI Katana 17 B13VEK-1464XCZ, 17.3', Intel Core i5-13420H, 16GB RAM, 1TB SSD, NVIDIA GeForce RTX 4050">
+                                <input type="hidden" name="product_price" value="1050.00">
+                                <input type="hidden" name="product_image" value="{{ url_for('static', filename='images/laptop/laptop3.webp') }}">
+                                <button type="submit">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                            </form>
+                        </li>
+                        <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                        <li id = "laptop-detajet"><a href="/details#nine">Shiko detajet</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <section class = "monitor" id = "monitorr">
+            <div class = "monitor-header">
+                <h2>Monitors</h2>
+            </div>
+
+            <div class = "monitor-grid">
+                <div class = "monitor-number nrbm-1">
+                    <img src = "static/images/monitors/monitor1.webp" id = "monitor-w1" >
+
+                    <p class = "monitor-info">
+                        Monitor AOC 24G2SPAE - LED, 23.8", Full HD, i zi 
+                    </p>
+
+                    <p class = "monitor-cmimi">
+                        120.00$
+                    </p>
+
+                    <ul class = "monitor-nr-buttons">
+                        <li id="monitor-buttons-first">
+                            <form method="POST" action="{{ url_for('add_to_cart') }}">
+                                <input type="hidden" name="product_id" value="10">
+                                <input type="hidden" name="product_name" value="Monitor AOC 24G2SPAE - LED, 23.8', Full HD, i zi">
+                                <input type="hidden" name="product_price" value="120.00">
+                                <input type="hidden" name="product_image" value="{{ url_for('static', filename='images/monitors/monitor1.webp') }}">
+                                <button type="submit">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                            </form>
+                        </li>
+                        <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                    </ul>
+                </div>
+
+                <div class = "monitor-number nrbm-2">
+                    <img src = "static/images/monitors/laptop2.webp" id = "monitor-w2" >
+
+                    <p class = "monitor-info">
+                        Monitor LG UltraWide 34WP65CP-B, 34", UWQHD, i zi 
+                    </p>
+
+                    <p class = "monitor-cmimi">
+                        375.00$
+                    </p>
+
+                    <ul class = "monitor-nr-buttons">
+                        <li id="monitor-buttons-first">
+                            <form method="POST" action="{{ url_for('add_to_cart') }}">
+                                <input type="hidden" name="product_id" value="11">
+                                <input type="hidden" name="product_name" value="Monitor LG UltraWide 34WP65CP-B, 34', UWQHD, i zi">
+                                <input type="hidden" name="product_price" value="375.00">
+                                <input type="hidden" name="product_image" value="{{ url_for('static', filename='images/monitors/monitor2.webp') }}">
+                                <button type="submit">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                            </form>
+                        </li>
+                        <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                    </ul>
+                </div>
+
+                <div class = "monitor-number nrmb-3">
+                    <img src = "static/images/monitors/monitor3.webp" id = "monitor-w3" >
+
+                    <p class = "monitor-info">
+                        Monitor MSI Pro MP245V, 23.8", Full HD, 100 Hz, i zi 
+                    </p>
+
+                    <p class = "monitor-cmimi">
+                        99.00$ 
+                    </p>
+
+                    <ul class = "monitor-nr-buttons">
+                        <li id="monitor-buttons-first">
+                            <form method="POST" action="{{ url_for('add_to_cart') }}">
+                                <input type="hidden" name="product_id" value="12">
+                                <input type="hidden" name="product_name" value="Monitor MSI Pro MP245V, 23.8', Full HD, 100 Hz, i zi">
+                                <input type="hidden" name="product_price" value="99.00">
+                                <input type="hidden" name="product_image" value="{{ url_for('static', filename='images/monitors/monitor3.webp') }}">
+                                <button type="submit">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                            </form>
+                        </li>
+                        <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <section class = "phone" id = "phones">
+            <div class = "phone-header">
+                <h2>Phones</h2>
+            </div>
+
+            <div class = "phones-grid">
+                
+                <div class = "phone-number number--1">
+                    <img src = "static/images/phones/phone1.webp" id = "phone-w">
+
+                    <p class = "phone-info">Celular myPhone Maestro 2, i zi </p>
+
+                    <p class = "phone-cmimi">30.00$ </p>
+                    
+                    <ul class = "phone-nr-buttons">
+                        <li id="phone-buttons-first">
+                            <form method="POST" action="{{ url_for('add_to_cart') }}">
+                                <input type="hidden" name="product_id" value="13">
+                                <input type="hidden" name="product_name" value="Celular myPhone Maestro 2, i zi">
+                                <input type="hidden" name="product_price" value="30.00">
+                                <input type="hidden" name="product_image" value="{{ url_for('static', filename='images/phones/phone1.webp') }}">
+                                <button type="submit">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                            </form>
+                        </li>
+                        <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                    </ul>
+
+                </div>
+
+                <div class = "phone-number number--2">
+                    <img src = "static/images/phones/phone2.webp" id = "phone-w2">
+
+                    <p class = "phone-info">Apple iPhone 15, 128GB, Blue</p>
+
+                    <p class = "phone-cmimi">900.00$ </p>
+                    
+                    <ul class = "phone-nr-buttons">
+                        <li id="phone-buttons-first">
+                            <form method="POST" action="{{ url_for('add_to_cart') }}">
+                                <input type="hidden" name="product_id" value="14">
+                                <input type="hidden" name="product_name" value="Apple iPhone 15, 128GB, Blue">
+                                <input type="hidden" name="product_price" value="900.00">
+                                <input type="hidden" name="product_image" value="{{ url_for('static', filename='images/phones/phone2.webp') }}">
+                                <button type="submit">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                            </form>
+                        </li>
+                        <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                    </ul>
+
+                </div>
+
+                <div class = "phone-number number--3">
+                    <img src = "static/images/phones/phone3.webp" id = "phone-w3">
+
+                    <p class = "phone-info">Apple iPhone 16, 128GB, Black</p>
+
+                    <p class = "phone-cmimi">1000.00$ </p>
+                    
+                    <ul class = "phone-nr-buttons">
+                        <li id="phone-buttons-first">
+                            <form method="POST" action="{{ url_for('add_to_cart') }}">
+                                <input type="hidden" name="product_id" value="15">
+                                <input type="hidden" name="product_name" value="Apple iPhone 16, 128GB, Black">
+                                <input type="hidden" name="product_price" value="1000.00">
+                                <input type="hidden" name="product_image" value="{{ url_for('static', filename='images/phones/phone3.webp') }}">
+                                <button type="submit">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                            </form>
+                        </li>
+                        <li><a href=""><i class="fa-solid fa-heart"></i></a></li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </section>
+
+
+    </body>
+</html>
